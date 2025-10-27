@@ -48,4 +48,40 @@ public class CarList {
         }
     }
 
+    // 우승자 선정
+    public List<String> selectWinners(Map<String, Integer> carRecord){
+        int highestScore = getHighestScore();
+        List<String> winners = new ArrayList<>();
+        Set<String> carNames = carRecord.keySet();
+        Iterator<String> carIter = carNames.iterator();
+
+        if(carIter.hasNext()){
+            String car = carIter.next();
+            int score = carRecord.get(car);
+
+            if(score == highestScore){
+                winners.add(car);
+            }
+        }
+
+        return winners;
+    }
+
+    // 최고 점수 산정
+    public int getHighestScore(){
+        int highestScore = 0;
+        Set<String> carNames = carRecord.keySet();
+        Iterator<String> carIter = carNames.iterator();
+
+        if(carIter.hasNext()){
+            String car = carIter.next();
+            int score = carRecord.get(car);
+
+            if(score > highestScore){
+                highestScore = score;
+            }
+        }
+
+        return highestScore;
+    }
 }
