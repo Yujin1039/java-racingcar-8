@@ -27,8 +27,25 @@ public class CarList {
     }
 
     // 자동차 이동값 저장
+    public void saveMoves(){
+        Set<String> carNames = carRecord.keySet();
+        Iterator<String> carIter = carNames.iterator();
 
+        if(carIter.hasNext()){
+            int score = carRecord.get(carIter.next());
+            score += move();
+        }
+    }
 
     // 자동차 이동
+    public int move(){
+        int randomValue = Randoms.pickNumberInRange(0,9);
+
+        if(randomValue >= 4){
+            return 1;
+        }else {
+            return 0;
+        }
+    }
 
 }
