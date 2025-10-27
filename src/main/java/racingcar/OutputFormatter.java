@@ -13,7 +13,7 @@ public class OutputFormatter {
         Set<String> carNames = carRecord.keySet();
         Iterator<String> carIter = carNames.iterator();
 
-        if(carIter.hasNext()){
+        while(carIter.hasNext()){
             String car = carIter.next();
             String format = "-";
             sb.append(car+" : "+format.repeat(carRecord.get(car))+"\n");

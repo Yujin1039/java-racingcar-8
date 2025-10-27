@@ -31,9 +31,12 @@ public class CarList {
         Set<String> carNames = carRecord.keySet();
         Iterator<String> carIter = carNames.iterator();
 
-        if(carIter.hasNext()){
-            int score = carRecord.get(carIter.next());
+        while(carIter.hasNext()){
+            String car = carIter.next();
+            int score = carRecord.get(car);
             score += move();
+
+            carRecord.put(car, score);
         }
     }
 
@@ -55,7 +58,7 @@ public class CarList {
         Set<String> carNames = carRecord.keySet();
         Iterator<String> carIter = carNames.iterator();
 
-        if(carIter.hasNext()){
+        while(carIter.hasNext()){
             String car = carIter.next();
             int score = carRecord.get(car);
 
@@ -73,7 +76,7 @@ public class CarList {
         Set<String> carNames = carRecord.keySet();
         Iterator<String> carIter = carNames.iterator();
 
-        if(carIter.hasNext()){
+        while(carIter.hasNext()){
             String car = carIter.next();
             int score = carRecord.get(car);
 
