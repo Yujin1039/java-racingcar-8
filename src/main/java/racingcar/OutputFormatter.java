@@ -1,6 +1,7 @@
 package racingcar;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -21,4 +22,12 @@ public class OutputFormatter {
     }
 
     // 우승자 안내 문구
+    public void getWinners(List<String> winners){
+        sb.append("최종 우승자 : "+String.join(", ",winners));
+    }
+
+    // 문구 전달
+    public StringBuilder getStringBuilder(){
+        return sb;
+    }
 }
