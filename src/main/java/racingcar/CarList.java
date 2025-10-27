@@ -10,7 +10,7 @@ public class CarList {
 
     // 생성자(Key: 차 이름, value: 전진 횟수)
     public CarList(String[] carNames, int round){
-        this.carRecord = new HashMap<>();
+        this.carRecord = new LinkedHashMap<>();
         this.round = round;
 
         for(String car:carNames){
