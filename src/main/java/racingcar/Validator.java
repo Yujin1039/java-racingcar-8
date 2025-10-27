@@ -9,6 +9,9 @@ public class Validator {
     public String[] validCarNames(String input){
         String[] carArr = input.split(",");
 
+        // 차가 1대인 경우
+        if(carArr.length == 1) throw new IllegalArgumentException();
+
         for(String car:carArr){
             if(car.length() > 5 || car.isEmpty()){ // 차 이름이 5자 이상이거나 공백인 경우
                 throw new IllegalArgumentException();
